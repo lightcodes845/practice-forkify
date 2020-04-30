@@ -1,0 +1,38 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Forkify project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "build:dev": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darefalola7/practice-forkify.git"
+  },
+  "author": "Falola Dare",
+  "license": "ISC",
+  "browserslist": "> 0.2%",
+  "bugs": {
+    "url": "https://github.com/darefalola7/practice-forkify/issues"
+  },
+  "homepage": "https://github.com/darefalola7/practice-forkify#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^4.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "jquery": "^3.5.0"
+  }
+}

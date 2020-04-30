@@ -1,0 +1,13 @@
+// Specify which es6 features to convert to es5 based on the environment.
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 5 versions", "ie >= 8"]
+        }
+      }
+    ]
+  ]
+}
