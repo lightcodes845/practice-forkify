@@ -10,8 +10,9 @@ export default class Recipe {
       const res = await axios(
         `https://forkify-api.herokuapp.com/api/get?rId=${this.id}`
       );
+      // console.log(res);
       this.title = res.data.recipe.title;
-      this.author = res.data.recipe.author;
+      this.author = res.data.recipe.publisher;
       this.img = res.data.recipe.image_url;
       this.url = res.data.recipe.source_url;
       this.ingredients = res.data.recipe.ingredients;
@@ -103,5 +104,15 @@ export default class Recipe {
       return objIng;
     });
     this.ingredients = newIngredients;
+  }
+
+  updateServings(type) {
+    // Servings
+    const newServings = type === "dec" ? this.servings - 1 : this.servings + 1;
+    // Ingredients
+    this.ingredients.forEach((ing) => {
+      ing.count *= newServings / this.servings;
+    });
+    this.servings = newServings;
   }
 }
