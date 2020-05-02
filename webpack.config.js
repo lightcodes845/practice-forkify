@@ -8,7 +8,7 @@ module.exports = {
     filename: "js/bundle.js",
   },
   // mode: "development",
-  devtool: "cheap-module-eval-source-map",
+  // devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: "./dist",
   },

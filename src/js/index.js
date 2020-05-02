@@ -15,7 +15,6 @@ import * as likesView from "./views/likesView";
  *  - Liked recipes
  */
 const state = {};
-globalThis.state = state;
 // Search Controller
 const controlDefault = async () => {
   // Get query from view
@@ -150,8 +149,7 @@ elements.shopping.addEventListener("click", (e) => {
 
 /** Like controller
  * */
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());
+
 const controlLike = () => {
   if (!state.likes) state.likes = new Likes();
   const currentID = state.recipe.id;
@@ -202,4 +200,15 @@ elements.recipe.addEventListener("click", (e) => {
   }
 });
 
-// globalThis.l = new List();
+window.addEventListener("load", () => {
+  state.likes = new Likes();
+
+  // Restore likes
+  state.likes.readStorage();
+
+  // Toggle like menu button
+  likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+  // Render the existing likes
+  state.likes.likes.forEach((like) => likesView.renderLike(like));
+});
